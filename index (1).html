@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cue</title>
+  <meta name="description" content="Cue is a local-first app. Your notification data never leaves your device." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-700: #0F6E56;
+      --green-500: #1D9E75;
+      --green-100: #E1F5EE;
+      --green-50:  #F0FAF6;
+      --neutral-900: #111210;
+      --neutral-600: #4A4A47;
+      --neutral-400: #888780;
+      --neutral-200: #E4E3DF;
+      --neutral-100: #F5F4F0;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--white);
+      color: var(--neutral-900);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--neutral-200);
+      padding: 20px 0;
+    }
+
+    .header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--green-100);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green-700);
+    }
+
+    .logo-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--neutral-900);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--green-50);
+      border-bottom: 1px solid var(--green-100);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+
+    .privacy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-100);
+      color: var(--green-700);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .privacy-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--green-500);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 34px);
+      font-weight: 700;
+      color: var(--neutral-900);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--neutral-600);
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+
+    .updated {
+      font-size: 12px;
+      color: var(--neutral-400);
+    }
+
+    /* ── Promise strip ── */
+    .promises {
+      background: var(--white);
+      border-bottom: 1px solid var(--neutral-200);
+      padding: 24px;
+    }
+
+    .promises-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .promise {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .promise-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .promise-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 1px;
+    }
+
+    .promise-text span {
+      font-size: 12px;
+      color: var(--neutral-400);
+      line-height: 1.4;
+    }
+
+    /* ── Content ── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green-500);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 650;
+      color: var(--neutral-900);
+      margin-bottom: 14px;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--neutral-600);
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Info blocks ── */
+    .info-block {
+      background: var(--neutral-100);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+
+    .info-block.green {
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+    }
+
+    .info-block p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .info-block p:last-child { margin-bottom: 0; }
+
+    /* ── Permission rows ── */
+    .permission-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .permission-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 16px;
+      background: var(--neutral-100);
+      border-radius: 10px;
+    }
+
+    .perm-icon {
+      font-size: 17px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .perm-body strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 2px;
+    }
+
+    .perm-body span {
+      font-size: 13px;
+      color: var(--neutral-600);
+      line-height: 1.5;
+    }
+
+    .perm-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .tag-required {
+      background: var(--green-100);
+      color: var(--green-700);
+    }
+
+    .tag-optional {
+      background: var(--neutral-200);
+      color: var(--neutral-600);
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--neutral-200);
+      margin: 44px 0;
+    }
+
+    /* ── Contact ── */
+    .contact-block {
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    .contact-block h2 {
+      margin-bottom: 8px;
+    }
+
+    .contact-block a {
+      color: var(--green-500);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--neutral-200);
+      padding: 24px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--neutral-400);
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .promises-inner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">C</div>
+        <span class="logo-name">Cue</span>
+      </a>
+      <span style="font-size:13px;color:var(--neutral-400)">Privacy Policy</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="privacy-badge">Local-first · Zero server collection</div>
+    <h1>Your data stays<br>on your phone.</h1>
+    <p>Cue filters your notifications entirely on your device. We have no servers, no accounts, and no access to your data.</p>
+    <p class="updated">Last updated: September 8, 2026</p>
+  </div>
+
+  <!-- Promise strip -->
+  <div class="promises">
+    <div class="promises-inner">
+      <div class="promise">
+        <span class="promise-icon">🔒</span>
+        <div class="promise-text">
+          <strong>No server storage</strong>
+          <span>Nothing leaves your device</span>
+        </div>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">🚫</span>
+        <div class="promise-text">
+          <strong>No data selling</strong>
+          <span>We have nothing to sell</span>
+        </div>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">🗑️</span>
+        <div class="promise-text">
+          <strong>Auto-deleted in 7 days</strong>
+          <span>Old data is removed automatically</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main>
+
+    <section>
+      <p class="section-num">01</p>
+      <h2>Overview</h2>
+      <p>Cue is a notification scheduling app. It intercepts notifications on your device, holds the ones you've scheduled for later, and delivers them at the time you choose. None of this requires an internet connection, a user account, or any communication with our servers — because we don't have any.</p>
+      <div class="info-block green">
+        <p>Cue is a local-first application. Every piece of data the app handles — notification titles, app names, timestamps — is stored in a private database on your own device and never transmitted anywhere.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-num">02</p>
+      <h2>What we access and why</h2>
+      <p>To do its job, Cue needs to read certain information from your phone. Here is exactly what we access and why:</p>
+
+      <div class="info-block" style="margin-top:16px">
+        <p><strong style="color:var(--neutral-900);font-size:14px">Notification titles and short text</strong></p>
+        <p>When Cue holds a notification for later delivery, it stores the notification title and a short text snippet so it can show you a meaningful summary in your daily catch-up. We read only what Android exposes at the notification surface level — we never read the full content of messages, emails, or chats.</p>
+      </div>
+
+      <div class="info-block" style="margin-top:10px">
+        <p><strong style="color:var(--neutral-900);font-size:14px">App names and package identifiers</strong></p>
+        <p>Cue reads the names of apps installed on your phone to build your scheduling list. This information never leaves your device.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-num">03</p>
+      <h2>How your data is stored</h2>
+      <p>All data is stored in a private, sandboxed database on your device using Android's Room database system. No other app can access this database.</p>
+
+      <div class="info-block green">
+        <p>🗑️ <strong>Auto-deletion:</strong> Cue automatically deletes all notification data older than 7 days. You can also clear everything manually at any time from the app settings.</p>
+        <p style="margin-top:8px">☁️ <strong>No backups:</strong> Cue data is excluded from Android cloud backups. Your notification history never leaves your device, even through backup systems.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-num">04</p>
+      <h2>Third-party sharing</h2>
+      <p>We do not share your data with any third parties. We are not able to — we never receive your data in the first place.</p>
+      <p>Cue contains no advertising SDKs, no analytics libraries, and no tracking code of any kind.</p>
+    </section>
+
+    <section>
+      <p class="section-num">05</p>
+      <h2>Permissions</h2>
+      <p>Cue requests the following Android permissions:</p>
+
+      <div class="permission-list">
+        <div class="permission-row">
+          <span class="perm-icon">🔔</span>
+          <div class="perm-body">
+            <strong>Notification Access <span class="perm-tag tag-required">Required</span></strong>
+            <span>Allows Cue to intercept, hold, and schedule notifications. This is the core function of the app. Granted once via Android's Notification Access settings.</span>
+          </div>
+        </div>
+        <div class="permission-row">
+          <span class="perm-icon">⏰</span>
+          <div class="perm-body">
+            <strong>Exact Alarm <span class="perm-tag tag-required">Required</span></strong>
+            <span>Allows Cue to trigger your daily digest at the exact time you choose. This fires a standard notification — the same as any other app notification on your phone.</span>
+          </div>
+        </div>
+        <div class="permission-row">
+          <span class="perm-icon">📊</span>
+          <div class="perm-body">
+            <strong>Usage Stats <span class="perm-tag tag-optional">Optional</span></strong>
+            <span>Used for the Sync-on-Read feature — automatically clearing an app's held notifications when you open that app directly. The app works fully without this permission.</span>
+          </div>
+        </div>
+        <div class="permission-row">
+          <span class="perm-icon">📱</span>
+          <div class="perm-body">
+            <strong>Foreground Service <span class="perm-tag tag-required">Required</span></strong>
+            <span>Keeps Cue's background service running reliably. Android requires this for any app that monitors notifications continuously.</span>
+          </div>
+        </div>
+        <div class="permission-row">
+          <span class="perm-icon">🔄</span>
+          <div class="perm-body">
+            <strong>Receive Boot Completed <span class="perm-tag tag-required">Required</span></strong>
+            <span>Restarts Cue's service automatically when your phone reboots, so scheduling continues without you having to reopen the app.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-num">06</p>
+      <h2>Children's privacy</h2>
+      <p>Cue is not directed at children under the age of 13. We do not knowingly collect any personal information from children.</p>
+    </section>
+
+    <section>
+      <p class="section-num">07</p>
+      <h2>Changes to this policy</h2>
+      <p>If we make material changes to this Privacy Policy, we will update the date at the top of this page and notify users through an in-app notice. Continued use of Cue after changes are posted constitutes acceptance of those changes.</p>
+    </section>
+
+    <hr />
+
+    <div class="contact-block">
+      <h2>Questions?</h2>
+      <p>If you have any questions about this Privacy Policy or how Cue handles your data, please reach out:</p>
+      <p><a href="mailto:cue.notification@gmail.com">cue.notification@gmail.com</a></p>
+      <p style="margin-top:8px;font-size:13px;color:var(--neutral-400)">We aim to respond within 48 hours.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Cue · Built with privacy by design · South Africa</p>
+  </footer>
+
+</body>
+</html>
